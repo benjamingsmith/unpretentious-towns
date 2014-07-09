@@ -1,12 +1,12 @@
 (function(){
 	var townData=[];
 
-	// var map = new GMaps({
-	// 	div:'#map',
-	// 	lat: 0,
- //  	lng: 0,
- //  	disableDefaultUI:true,
-	// });
+	var map = new GMaps({
+		div:'#map',
+		lat: 0,
+  	lng: 0,
+  	disableDefaultUI:true,
+	});
 
 	$.rand = function(arg) {
       if ($.isArray(arg)) {
@@ -20,9 +20,10 @@
 
   $.getJSON('data/towns.json', function( data ) {
   	$.each(data.towns,function(index, value){
-  		console.log(value);
+  		//console.log(value);
   		townData.push(value);
   	});
+  	newTown();
   });
 
 	function changeLocation(latitude,longitude){
@@ -34,6 +35,10 @@
 		});
 	}
 
-	//changeLocation(40.192408,-85.387218);
+	function newTown(){
+		var randomTown = $.rand(townData);
+		console.log(randomTown);
+		changeLocation(randomTown.lat, randomTown.lng);
+	}
 
 })();
