@@ -60,6 +60,7 @@ module.exports = function (grunt) {
                 files: [
                     '<%= config.app %>/{,*/}*.html',
                     '.tmp/styles/{,*/}*.css',
+                    '<%= config.app %>/data/**',
                     '<%= config.app %>/images/{,*/}*'
                 ]
             }
@@ -313,7 +314,8 @@ module.exports = function (grunt) {
                         '.htaccess',
                         'images/{,*/}*.webp',
                         '{,*/}*.html',
-                        'styles/fonts/{,*/}*.*'
+                        'styles/fonts/{,*/}*.*',
+                        'data/**'
                     ]
                 }]
             },
