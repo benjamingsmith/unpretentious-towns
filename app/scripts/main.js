@@ -21,12 +21,12 @@
   $.getJSON('data/towns.json', function( data ) {
   	$.each(data.towns,function(index, value){
   		//console.log(value);
-  		townData.push(value);
+  		townData.push(value); // drop json data into an array
   	});
-  	newTown();
+  	newTown(); // load the first town after data is initially loaded
   });
 
-	function changeLocation(latitude,longitude){
+	function changeMapLocation(latitude,longitude){
 		map.removeMarkers();
 		map.setCenter(latitude,longitude);
 		map.addMarker({
@@ -38,7 +38,7 @@
 	function newTown(){
 		var randomTown = $.rand(townData);
 		console.log(randomTown);
-		changeLocation(randomTown.lat, randomTown.lng);
+		changeMapLocation(randomTown.lat, randomTown.lng);
 	}
 
 })();
