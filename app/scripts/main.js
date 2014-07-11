@@ -38,7 +38,7 @@
 	  	userLocation = data.city;
 	  	console.log(data);
 			$('.userLocation p').html('Forget '+userLocation+', you pretentious hipster. Your new spot takes place in');
-			$('.userLocation').css({'margin-left':-$('.userLocation').width()/2-122})
+			$('.userLocation').css({'margin-left':-$('.userLocation').width()/2});
 	  });
   }
 
@@ -46,7 +46,7 @@
 		map.removeMarkers();
 		map.setCenter(latitude,longitude);
 		map.addMarker({
-			lat:latitude,
+			lat:latitude+0.0075,
 			lng:longitude
 		});
 	}
@@ -70,6 +70,7 @@
 
 		$('.location-town').html(randomTown.town+',');
 		$('.location-state').html(randomTown.state);
+
 		centerText();
 	}
 
