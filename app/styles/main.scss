@@ -62,3 +62,43 @@ body {
     @include button;
     display:inline;
 }
+
+.share {
+    position:absolute;
+    bottom:55px;
+    width:190px;
+    z-index:5;
+    margin:auto;
+    left:50%;
+    -webkit-transform: translate(-50%,0);
+    -ms-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    .share-item {
+        position:relative;
+        display:inline-block;
+        width:43px;
+        height:43px;
+        background-image:url('../images/share_sprite.png');
+        @include button;
+        &.gplus {
+            background-position:0 0;
+        }
+        &.twitter {
+            background-position:-48px 0;
+        }
+        &.facebook {
+            background-position:-95px 0;
+        }
+        &.linkedin {
+            background-position:-143px 0;
+        }
+        img {
+            z-index:7;
+            position:absolute;
+            width:100%;
+            width:100%;
+            top:0;
+            left:0;
+        }
+    }
+}
