@@ -2,7 +2,8 @@
 	var townData=[];
 	var currentLat,
 	currentLng,
-	userLocation;
+	userLocation,
+	centerUserLocation;
 	var screenHeight = $(window).height();
 	var screenWidth = $(window).width();
 
@@ -34,11 +35,13 @@
   }
 
   function setUserLocation(){
+  	var locationBarWidth = $('.userLocation').width()/2;
   	$.getJSON('http://freegeoip.net/json/', function(data){
 	  	userLocation = data.city;
-	  	console.log(data);
+	  	//console.log(data);
 			$('.userLocation p').html('Forget '+userLocation+', you pretentious hipster. Your new spot takes place in');
-			$('.userLocation').css({'margin-left':-$('.userLocation').width()/2});
+			centerUserLocation = -$('.userLocation').width()/2-122;
+			$('.userLocation').css({'margin-left':centerUserLocation});
 	  });
   }
 
