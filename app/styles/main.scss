@@ -40,15 +40,27 @@ body {
     font-size:28px;
     font-family:'block_reg', sans-serif;
     text-align:center;
-    left:50%;
-    -webkit-transform: translate(-50%,0);
-    -ms-transform: translate(-50%,0);
-    transform: translate(-50%,0);
     padding:9px 20px;
+    left:50%;
     top:50px;
     display:inline;
     p {
         position:relative;
+    }
+}
+
+.shootLocation {
+    position:absolute;
+    width:100%;
+    font-size:280px;
+    font-family:'block_condensed', sans-serif;
+    z-index:5;
+    font-style:italic;
+    top:50%;
+    left:0;
+    text-align:center;
+    p {
+        line-height:230px;
     }
 }
 
@@ -63,10 +75,18 @@ body {
     display:inline;
 }
 
+.rotateUp {
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    //filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
 .share {
     position:absolute;
     bottom:55px;
-    width:190px;
+    width:195px;
     z-index:5;
     margin:auto;
     left:50%;
@@ -80,6 +100,7 @@ body {
         height:43px;
         background-image:url('../images/share_sprite.png');
         @include button;
+        margin-left:2px;
         &.gplus {
             background-position:0 0;
         }

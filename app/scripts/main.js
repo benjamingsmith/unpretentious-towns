@@ -4,6 +4,7 @@
 	currentLng,
 	userLocation;
 	var screenHeight = $(window).height();
+	var screenWidth = $(window).width();
 
 	var map = new GMaps({
 		div:'#map',
@@ -35,7 +36,9 @@
   function setUserLocation(){
   	$.getJSON('http://freegeoip.net/json/', function(data){
 	  	userLocation = data.city;
+	  	console.log(data);
 			$('.userLocation p').html('Forget '+userLocation+', you pretentious hipster. Your new spot takes place in');
+			$('.userLocation').css({'margin-left':-$('.userLocation').width()/2-122})
 	  });
   }
 
@@ -52,6 +55,10 @@
 		changeMapLocation(currentLat,currentLng);
 	}
 
+	function centerText(){
+		$('.shootLocation').css({'margin-top':-$('.shootLocation').height()/2});
+	}
+
 	function newTown(){
 		var randomTown = $.rand(townData);
 		var randomLat = randomTown.lat;
@@ -60,6 +67,10 @@
 		changeMapLocation(randomLat, randomLng);
 		currentLat = randomLat;
 		currentLng = randomLng;
+
+		$('.location-town').html(randomTown.town+',');
+		$('.location-state').html(randomTown.state);
+		centerText();
 	}
 
 	function startApp(){
