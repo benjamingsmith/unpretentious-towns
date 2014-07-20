@@ -12,7 +12,7 @@
 }
 
 body {
-
+    overflow:hidden;
 }
 
 .container {
@@ -76,7 +76,7 @@ body {
     text-align:center;
     padding-right:50px;
     p {
-        //line-height:230px;
+        
     }
     &.rotateUp {
         -webkit-transform: rotate(-10deg);

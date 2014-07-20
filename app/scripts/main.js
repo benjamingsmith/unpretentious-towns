@@ -79,7 +79,7 @@
 		$('.location-town').html(randomTown.town+',');
 		$('.location-state').html(randomTown.state);
 
-		centerText();
+		setTimeout(function(){centerText();},100);
 		$('.location-town').fitText(.5);
 		$('.location-state').fitText(.5);
 	}
@@ -91,6 +91,7 @@
 
 	$(window).on('resize',function(){
 		updateMap();
+		centerText();
 	});
 
 	$(document).ready(function() {
