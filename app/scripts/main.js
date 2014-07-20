@@ -42,15 +42,20 @@
 			$('.userLocation p').html('Forget '+userLocation+', you pretentious hipster. Your new spot takes place in');
 			centerUserLocation = -$('.userLocation').width()/2-122;
 			$('.userLocation').css({'margin-left':centerUserLocation});
+			
 	  });
   }
 
 	function changeMapLocation(latitude,longitude){
-		map.removeMarkers();
+		//map.removeMarkers();
 		map.setCenter(latitude,longitude);
+		// map.addMarker({
+		// 	lat:latitude+0.0075,
+		// 	lng:longitude
+		// });
 		map.addMarker({
-			lat:latitude+0.0075,
-			lng:longitude
+			lat:0,
+			lng:0
 		});
 	}
 
@@ -75,6 +80,8 @@
 		$('.location-state').html(randomTown.state);
 
 		centerText();
+		$('.location-town').fitText(.5);
+		$('.location-state').fitText(.5);
 	}
 
 	function startApp(){

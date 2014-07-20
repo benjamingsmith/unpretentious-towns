@@ -2,7 +2,8 @@
   "name": "non-pretentious-towns",
   "private": true,
   "dependencies": {
-    "jquery": "~1.11.0"
+    "jquery": "~1.11.0",
+    "FitText.js": "git@github.com:davatron5000/FitText.js.git"
   },
   "devDependencies": {}
 }

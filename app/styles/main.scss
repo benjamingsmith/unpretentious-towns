@@ -54,6 +54,14 @@ body {
     p {
         position:relative;
     }
+    &:after {
+        position:absolute;
+        width:22px;
+        height:40px;
+        background-image:url('../images/marker.png');
+        content:"";
+        margin-top:20px;
+    }
 }
 
 .shootLocation {
@@ -66,8 +74,22 @@ body {
     top:50%;
     left:0;
     text-align:center;
+    padding-right:50px;
     p {
-        line-height:230px;
+        //line-height:230px;
+    }
+    &.rotateUp {
+        -webkit-transform: rotate(-10deg);
+        -moz-transform: rotate(-10deg);
+        -ms-transform: rotate(-10deg);
+        -o-transform: rotate(-10deg);
+        //filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    }
+    .location-town {
+        margin-top:3%;
+    }
+    .location-state {
+        margin-top:-5.5%;
     }
 }
 
@@ -80,14 +102,6 @@ body {
     background-image:url('../images/reload_icon.png');
     @include button;
     display:inline;
-}
-
-.rotateUp {
-    -webkit-transform: rotate(-10deg);
-    -moz-transform: rotate(-10deg);
-    -ms-transform: rotate(-10deg);
-    -o-transform: rotate(-10deg);
-    //filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 
 .share {
