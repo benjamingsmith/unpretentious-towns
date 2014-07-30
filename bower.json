@@ -3,7 +3,8 @@
   "private": true,
   "dependencies": {
     "jquery": "~1.11.0",
-    "FitText.js": "git@github.com:davatron5000/FitText.js.git"
+    "FitText.js": "git@github.com:davatron5000/FitText.js.git",
+    "gsap": "git@github.com:greensock/GreenSock-JS.git#~1.13.1"
   },
   "devDependencies": {}
 }
