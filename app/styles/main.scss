@@ -41,17 +41,16 @@ body {
 
 .userLocation {
     min-height:49px;
-    background:#000;
-    position:absolute;
+    //background:#000;
+    position:relative;
     z-index:10;
     color:#FFF;
     font-size:28px;
     font-family:'block_reg', sans-serif;
     text-align:center;
-    padding:9px 20px;
     left:50%;
     top:50px;
-    display:inline;
+    float:left;
     &.center{
         -webkit-transform: translate(-50%,0);
         -ms-transform: translate(-50%,0);
@@ -59,6 +58,8 @@ body {
     }
     p {
         position:relative;
+        background-color:#000;
+        padding:9px 20px;
     }
     &:after {
         position:absolute;
@@ -67,6 +68,8 @@ body {
         background-image:url('../images/marker.png');
         content:"";
         margin-top:40px;
+        left:50%;
+        margin-left:-11px;
     }
 }
 
@@ -77,27 +80,13 @@ body {
     font-family:'block_condensed', sans-serif;
     z-index:5;
     font-style:italic;
-    top:50%;
     left:0;
     text-align:center;
     padding-right:50px;
-    p {
-        
-    }
-    &.rotateUp {
-        -webkit-transform: rotate(-10deg);
-        -moz-transform: rotate(-10deg);
-        -ms-transform: rotate(-10deg);
-        -o-transform: rotate(-10deg);
-        //filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-    }
-    &.rotateDown {
-        -webkit-transform: rotate(5deg);
-        -moz-transform: rotate(5deg);
-        -ms-transform: rotate(5deg);
-        -o-transform: rotate(5deg);
-        //filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-    }
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
     .location-town {
         margin-top:3%;
     }
@@ -107,14 +96,10 @@ body {
 }
 
 .reloadLocation {
-    position:absolute;
-    top:0;
-    right:-75px;
     width:49px;
     height:49px;
     background-image:url('../images/reload_icon.png');
     @include button;
-    display:inline;
 }
 
 .share {

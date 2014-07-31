@@ -5,13 +5,32 @@
    ========================================================================== */
 
 /* Small screens and mobile ----------- */
-@media only screen and (max-width : 979px) {
+@media only screen and (max-width : 639px) {
     .userLocation {
-        width:60%;
-        // left:50%;
-        // -webkit-transform: translate(-50%,0);
-        // -ms-transform: translate(-50%,0);
-        // transform: translate(-50%,0);
+        width:310px;
+    }
+    .reloadLocation {
+        position:relative;
+        margin:auto;
+        top:20px;
+        right:auto;
+    }
+    .shootLocation {
+        top:65%;
+    }
+}
+
+@media only screen and (min-width : 640px) {
+    .userLocation {
+        width:520px;
+    }
+    .reloadLocation {
+        position:absolute;
+        right:-79px;
+        top:0;
+    }
+    .shootLocation {
+        top:50%;
     }
 }
 
