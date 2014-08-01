@@ -7,7 +7,8 @@
 /* Small screens and mobile ----------- */
 @media only screen and (max-width : 639px) {
     .userLocation {
-        width:310px;
+        width:auto;
+        left:0;
     }
     .reloadLocation {
         position:relative;
@@ -16,13 +17,20 @@
         right:auto;
     }
     .shootLocation {
-        top:65%;
+        top:70%;
+        padding-right:0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
     }
 }
 
 @media only screen and (min-width : 640px) {
     .userLocation {
         width:520px;
+        margin-left:-260px;
+        left:50%;
     }
     .reloadLocation {
         position:absolute;
@@ -31,13 +39,19 @@
     }
     .shootLocation {
         top:50%;
+        padding-right:50px;
+        -webkit-transform: rotate(-10deg);
+        -moz-transform: rotate(-10deg);
+        -ms-transform: rotate(-10deg);
+        -o-transform: rotate(-10deg);
     }
 }
 
 /* iPad ----------- */
 @media only screen and (min-width : 980px) {
     .userLocation {
-        width:auto;
+        width:925px;
+        margin-left:-462.5px;
     }
 }
 

@@ -74,8 +74,8 @@
 		$('.location-town').html(randomTown.town+',');
 		$('.location-state').html(randomTown.state);
 
-		$('.location-town').fitText(.6, { minFontSize: '120px'});
-		$('.location-state').fitText(.6, { minFontSize: '120px'});
+		$('.location-town').fitText(.6, { minFontSize: '70px'});
+		$('.location-state').fitText(.6, { minFontSize: '70px'});
 		centerText();
 		TweenLite.from($('.location-town, .location-state'),.3,{'font-size':'0px',ease:Sine.easeOut, onComplete:centerText});
 	}
@@ -83,19 +83,18 @@
 	function centerUserLocation(){
 		var headerWidth = $('.userLocation').width();
 		$('.userLocation').css({'margin-left':-headerWidth/2-98/2});
-		console.log(headerWidth);
 	}
 
 	function startApp(){
 		setStartLocation();
-		centerUserLocation();
+		//centerUserLocation();
 		//setUserLocation();
 	}
 
 	$(window).on('resize',function(){
 		updateMap();
 		centerText();
-		centerUserLocation();
+		//centerUserLocation();
 	});
 
 	$(document).ready(function() {
