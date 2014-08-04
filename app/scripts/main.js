@@ -3,7 +3,8 @@
 	var currentLat,
 	currentLng,
 	userLocation,
-	centerUserLocation;
+	centerUserLocation,
+	device;
 	var screenHeight = $(window).height();
 	var screenWidth = $(window).width();
 
@@ -33,17 +34,34 @@
 	  });
   }
 
-  // function setUserLocation(){
-  // 	var locationBarWidth = $('.userLocation').width()/2;
-  // 	$.getJSON('http://freegeoip.net/json/', function(data){
-	 //  	userLocation = data.city;
-	 //  	//console.log(data);
-		// 	$('.userLocation p').html('Forget '+userLocation+', you tedious hipster. Your new spot takes place in');
-		// 	centerUserLocation = -$('.userLocation').width()/2-122;
-		// 	//$('.userLocation').css({'margin-left':centerUserLocation});
-		// 	$('.userLocation').addClass('center');
-	 //  });
-  // }
+  function detectmob() { 
+	 if( navigator.userAgent.match(/Android/i)
+	 || navigator.userAgent.match(/webOS/i)
+	 || navigator.userAgent.match(/iPhone/i)
+	 || navigator.userAgent.match(/iPod/i)
+	 || navigator.userAgent.match(/BlackBerry/i)
+	 || navigator.userAgent.match(/Windows Phone/i)){
+			device = 'mobile';
+			console.log('DEVICE: MOBILE');
+		}
+		else {
+			device = 'desktop';
+			console.log('DEVICE: DESKTOP');
+			return false;
+		}
+	}
+
+  function setUserLocation(){
+  	var locationBarWidth = $('.userLocation').width()/2;
+  	$.getJSON('http://freegeoip.net/json/', function(data){
+	  	userLocation = data.city;
+	  	//console.log(data);
+			$('.userLocation p').html('Forget '+userLocation+', you tedious hipster. Your new spot takes place in');
+			centerUserLocation = -$('.userLocation').width()/2-122;
+			//$('.userLocation').css({'margin-left':centerUserLocation});
+			//$('.userLocation').addClass('center');
+	  });
+  }
 
 	function changeMapLocation(latitude,longitude){
 		map.setCenter(latitude,longitude);
@@ -87,8 +105,12 @@
 
 	function startApp(){
 		setStartLocation();
-		//centerUserLocation();
-		//setUserLocation();
+		detectmob();
+		if(device == 'desktop'){
+			setUserLocation();
+		} else if(device=='mobile'){
+			$('.userLocation p').html('Forget NYC and LA, you tedious hipster. Your new spot takes place in');
+		}
 	}
 
 	$(window).on('resize',function(){

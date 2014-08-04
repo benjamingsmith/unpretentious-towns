@@ -9,7 +9,6 @@
     .userLocation {
         width:auto;
         left:0;
-        top:10px;
     }
     .reloadLocation {
         position:relative;
@@ -52,7 +51,7 @@
 /* iPad ----------- */
 @media only screen and (min-width : 980px) {
     .userLocation {
-        width:925px;
+        width:860px;
         margin-left:-462.5px;
     }
 }
